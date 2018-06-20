@@ -57,7 +57,8 @@ while (!feof($inputFile)) {
 
 $output = array();
 $i=1;
-while($i<count($input)) {
+$count = count($input);
+while($i<$count) {
   $output[]= polka($input[$i]);
   $i++;
 }
@@ -73,7 +74,8 @@ $priority = [1=>'^','*','/','+','-'];
 $out ='';
 $stack = new ReadingList();
 try{
-  for ($i=0; $i < strlen($expression); $i++) {
+   $len= strlen($expression);
+  for ($i=0; $i < $len; $i++) {
 
   if($expression[$i]=='('){
     $stack->push($expression[$i]);
